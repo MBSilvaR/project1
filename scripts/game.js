@@ -18,8 +18,9 @@ console.log('game.js is running!');
   }
 
 
-
 var board = []
+
+var boardSize = 12
 
   var populate = function(size){
     for(var h = 0; h < size; h++){
@@ -33,26 +34,35 @@ var board = []
         $('#cell' + i+ "a" + j).css('background-color', colors[randomColor])
         $('#cell' + i + "a" + j).click(function() {
           console.log('click');
-          var rand_dot = $('.dot')[Math.floor(Math.random()*$('.dot').length)];
-          var bg_color = $(rand_dot).css('background-color');
-          var randomOffColor = Math.floor((Math.random() * 4) + 1);
-          $(rand_dot).css('background-color', offColors[randomOffColor]);
+          if($(this).hasClass("winningDot")){
+            alert("Good job! Are you ready for next level?");
+            boardSize++;
+            populate(boardSize)
+            // debugger
+            document.location.reload();
+            // size++
+            // //clear the board
+            // populate(size)
+
+          }
+
 
         })
+
       }
     }
   }
-
-  populate(8)
+populate(boardSize)
 
 
    var rand_dot = $('.dot')[Math.floor(Math.random()*$('.dot').length)];
    var bg_color = $(rand_dot).css('background-color');
    var randomOffColor = Math.floor((Math.random() * 4) + 1);
    $(rand_dot).css('background-color', offColors[randomOffColor]);
+   $(rand_dot).addClass("winningDot");
 
 
-})();
+
 
        // 1. make function populate / at end of populate do color modify function and start timer
        // 2. good click = increment size of board --> recall populate w/new size
@@ -68,6 +78,5 @@ var board = []
 
 
 
-
-
+})();
 
