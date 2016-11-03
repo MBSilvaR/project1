@@ -10,28 +10,64 @@ console.log('game.js is running!');
     4:'rgb(21,149,136)'
   }
 
-  var board = [
-    [],
-    [],
-    [],
-    [],
-    [],
-    []
-  ]
-
-
-
-  for(var i = 0; i < board.length; i++) {
-    $('#container').append('<div id="div'+ i +'" />');
-    for (var j = 0; j < 6; j++){
-      $('#div'+i).append('<div class = "dot" id="div'+ i+ j +'" />')
-      var randomColor = Math.floor((Math.random() * 4) + 1);
-      $('#div'+i+j).css('background-color', colors[randomColor])
-
-      // board[i].push({color:colors[randomColor]})
-    }
+  var offColors = {
+    1:'rgb(255,51,141)',
+    2:'rgb(147,51,255)',
+    3:'rgb(255,114,51)',
+    4:'rgb(31,180,190)',
   }
 
 
+
+var board = []
+
+  var populate = function(size){
+    for(var h = 0; h < size; h++){
+      board.push([])
+    }
+    for(var i = 0; i < board.length; i++) {
+      $('#container').append('<div id="row'+ i +'" />');
+      for (var j = 0; j < size; j++){
+        $('#row' + i).append('<div class = "dot" id="cell'+ i + "a" + j +'" />')
+        var randomColor = Math.floor((Math.random() * 4) + 1);
+        $('#cell' + i+ "a" + j).css('background-color', colors[randomColor])
+        $('#cell' + i + "a" + j).click(function() {
+          console.log('click');
+          var rand_dot = $('.dot')[Math.floor(Math.random()*$('.dot').length)];
+          var bg_color = $(rand_dot).css('background-color');
+          var randomOffColor = Math.floor((Math.random() * 4) + 1);
+          $(rand_dot).css('background-color', offColors[randomOffColor]);
+
+        })
+      }
+    }
+  }
+
+  populate(8)
+
+
+   var rand_dot = $('.dot')[Math.floor(Math.random()*$('.dot').length)];
+   var bg_color = $(rand_dot).css('background-color');
+   var randomOffColor = Math.floor((Math.random() * 4) + 1);
+   $(rand_dot).css('background-color', offColors[randomOffColor]);
+
+
 })();
+
+       // 1. make function populate / at end of populate do color modify function and start timer
+       // 2. good click = increment size of board --> recall populate w/new size
+       // 3. bad click / timer = 0 --> reset variables --> alert "game over!"
+       //
+       // CHECK TIME RESTART
+
+
+
+      // board[i].push({color:colors[randomColor]})
+
+
+
+
+
+
+
 
