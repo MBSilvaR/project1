@@ -17,6 +17,12 @@
 
 }
 
+#timer {
+  position: absolute;
+  left: 65px;
+  top: 70px;
+}
+
 #console {
   position: absolute;
   font-family: Helvetica, sans-serif;
@@ -53,9 +59,9 @@
   border-radius: 50%;
   position: absolute;
   top: 230px;
-  left: 5px;
-  width: 40px;
-  height: 40px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
   margin-left: 35px;
   margin-top: 35px;
   background-color: rgb(253,151,39);
@@ -66,8 +72,8 @@
   position: absolute;
   top: 230px;
   left: 85px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin-left: 35px;
   margin-top: 35px;
   background-color: rgb(230,37,101);
@@ -76,10 +82,10 @@
 .color3 {
   border-radius: 50%;
   position: absolute;
-  top: 310px;
-  left: 5px;
-  width: 40px;
-  height: 40px;
+  top: 320px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
   margin-left: 35px;
   margin-top: 35px;
   background-color: rgb(155,47,174);
@@ -88,10 +94,10 @@
 .color4 {
   border-radius: 50%;
   position: absolute;
-  top: 310px;
+  top: 320px;
   left: 85px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin-left: 35px;
   margin-top: 35px;
   background-color: rgb(21,149,136);

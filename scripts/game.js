@@ -22,6 +22,12 @@ var board = []
 
 var boardSize = 2
 
+// var startCountdown = 99;
+//   var startGame = setInterval(function() {
+//   startCountdown -= 1;
+//   $('#timer').html(startCountdown);
+//   }, 1000);
+
   var populate = function(size){
     for(var h = 0; h < size; h++){
       board.push([])
@@ -31,18 +37,24 @@ var boardSize = 2
       for (var j = 0; j < size; j++){
         $('#row' + i).append('<div class = "dot" id="cell'+ i + "a" + j +'" />')
         var randomColor = Math.floor((Math.random() * 4) + 1);
-        $('#cell' + i+ "a" + j).css('background-color', colors[randomColor])
-
-
+        $('#cell' + i+ "a" + j).css('background-color', colors[randomColor]);
         $('#cell' + i + "a" + j).click(function() {
           console.log('click');
           if($(this).hasClass("winning_Dot")){
-            boardSize++;
+            if(boardSize===12){
+              boardSize = 12
+            }
+            else{
+              boardSize++;
+            }
+
             $('.dot').remove()
             $('.rows').remove()
+            board = []
             populate(boardSize);
             offDot()
-          } else {
+          }
+          else {
             alert("Game over! Bye!");
             $('#container').css('display','none');
             alert("Reload if you want more game");
