@@ -32,20 +32,18 @@ var boardSize = 2
         $('#row' + i).append('<div class = "dot" id="cell'+ i + "a" + j +'" />')
         var randomColor = Math.floor((Math.random() * 4) + 1);
         $('#cell' + i+ "a" + j).css('background-color', colors[randomColor])
+
+
         $('#cell' + i + "a" + j).click(function() {
           console.log('click');
           if($(this).hasClass("winning_Dot")){
-            alert("Good job! Get ready for next level!");
             boardSize++;
             $('.dot').remove()
             $('.rows').remove()
-            board = []
-
             populate(boardSize);
             offDot()
-
           } else {
-            alert("You missed! Game over! Bye!");
+            alert("Game over! Bye!");
             $('#container').css('display','none');
             alert("Reload if you want more game");
 
@@ -71,18 +69,13 @@ offDot()
 
 
        // 1. make function populate / at end of populate do color modify function and start timer
-       // 2. good click = increment size of board --> recall populate w/new size
-       // 3. bad click / timer = 0 --> reset variables --> alert "game over!"
+       // 2. timer = 0 --> reset variables --> alert "game over!"
        //
-       // CHECK TIME RESTART
+
 
 
 
       // board[i].push({color:colors[randomColor]})
-
-
-
-
 
 })();
 
