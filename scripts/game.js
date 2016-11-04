@@ -11,10 +11,10 @@ console.log('game.js is running!');
   }
 
   var offColors = {
-    1:'rgb(255,51,141)',
+    1:'rgb(255,51,121)',
     2:'rgb(147,51,255)',
     3:'rgb(255,114,51)',
-    4:'rgb(31,180,190)',
+    4:'rgb(31,165,170)',
   }
 
 
@@ -34,7 +34,7 @@ var boardSize = 2
         $('#cell' + i+ "a" + j).css('background-color', colors[randomColor])
         $('#cell' + i + "a" + j).click(function() {
           console.log('click');
-          if($(this).hasClass("winningDot")){
+          if($(this).hasClass("winning_Dot")){
             alert("Good job! Get ready for next level!");
             boardSize++;
             $('.dot').remove()
@@ -42,11 +42,8 @@ var boardSize = 2
             board = []
 
             populate(boardSize);
-            funkyDot()
-            // debugger
+            offDot()
 
-            // //clear the board
-            // populate(size)
           } else {
             alert("You missed! Game over! Bye!");
             $('#container').css('display','none');
@@ -67,7 +64,7 @@ var offDot = function(){
    var bg_color = $(rand_dot).css('background-color');
    var randomOffColor = Math.floor((Math.random() * 4) + 1);
    $(rand_dot).css('background-color', offColors[randomOffColor]);
-   $(rand_dot).addClass("winningDot");
+   $(rand_dot).addClass("winning_Dot");
 }
 
 offDot()
