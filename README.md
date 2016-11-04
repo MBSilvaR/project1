@@ -1,2 +1,4 @@
 # project1
-Dots game
+d.o.t.s.
+
+

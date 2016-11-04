@@ -19,14 +19,14 @@
 
 #timer {
   position: absolute;
-  left: 65px;
+  left: 75px;
   top: 70px;
 }
 
 #console {
   position: absolute;
   font-family: Helvetica, sans-serif;
-  font-size: 60px;
+  font-size: 70px;
   color: gray;
   left: 50px;
   top: 40px;
@@ -108,7 +108,7 @@ p {
   color: gray;
   font-size: 20px;
   position: absolute;
-  top: 220px;
+  top: 210px;
   left: 47px;
 }
 

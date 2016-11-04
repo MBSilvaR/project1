@@ -22,11 +22,19 @@ var board = []
 
 var boardSize = 2
 
-// var startCountdown = 99;
-//   var startGame = setInterval(function() {
-//   startCountdown -= 1;
-//   $('#timer').html(startCountdown);
-//   }, 1000);
+var startCountdown = 11;
+  var startGame = setInterval(function() {
+  startCountdown -= 1;
+  $('#timer').html(startCountdown);
+  if(startCountdown < 0) {
+    startCountdown = 0;
+    $('#timer').html(startCountdown);
+    alert("Game over! Bye!");
+    clearInterval(startGame);
+    $('.dot').off()
+  }
+  }, 1000);
+
 
   var populate = function(size){
     for(var h = 0; h < size; h++){
@@ -53,14 +61,15 @@ var boardSize = 2
             board = []
             populate(boardSize);
             offDot()
+            startCountdown = 10;
           }
           else {
             alert("Game over! Bye!");
-            $('#container').css('display','none');
-            alert("Reload if you want more game");
-
+            $('.dot').off();
+            clearInterval(startGame);
+            startCountdown = 0;
+            $('#timer').html(startCountdown);
           }
-
 
         })
 
@@ -80,14 +89,6 @@ var offDot = function(){
 offDot()
 
 
-       // 1. make function populate / at end of populate do color modify function and start timer
-       // 2. timer = 0 --> reset variables --> alert "game over!"
-       //
-
-
-
-
-      // board[i].push({color:colors[randomColor]})
 
 })();
 
