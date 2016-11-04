@@ -20,14 +20,14 @@ console.log('game.js is running!');
 
 var board = []
 
-var boardSize = 12
+var boardSize = 2
 
   var populate = function(size){
     for(var h = 0; h < size; h++){
       board.push([])
     }
     for(var i = 0; i < board.length; i++) {
-      $('#container').append('<div id="row'+ i +'" />');
+      $('#container').append('<div class ="rows" id="row'+ i +'" />');
       for (var j = 0; j < size; j++){
         $('#row' + i).append('<div class = "dot" id="cell'+ i + "a" + j +'" />')
         var randomColor = Math.floor((Math.random() * 4) + 1);
@@ -35,14 +35,22 @@ var boardSize = 12
         $('#cell' + i + "a" + j).click(function() {
           console.log('click');
           if($(this).hasClass("winningDot")){
-            alert("Good job! Are you ready for next level?");
+            alert("Good job! Get ready for next level!");
             boardSize++;
-            populate(boardSize)
+            $('.dot').remove()
+            $('.rows').remove()
+            board = []
+
+            populate(boardSize);
+            funkyDot()
             // debugger
-            document.location.reload();
-            // size++
+
             // //clear the board
             // populate(size)
+          } else {
+            alert("You missed! Game over! Bye!");
+            $('#container').css('display','none');
+            alert("Reload if you want more game");
 
           }
 
@@ -54,14 +62,15 @@ var boardSize = 12
   }
 populate(boardSize)
 
-
+var offDot = function(){
    var rand_dot = $('.dot')[Math.floor(Math.random()*$('.dot').length)];
    var bg_color = $(rand_dot).css('background-color');
    var randomOffColor = Math.floor((Math.random() * 4) + 1);
    $(rand_dot).css('background-color', offColors[randomOffColor]);
    $(rand_dot).addClass("winningDot");
+}
 
-
+offDot()
 
 
        // 1. make function populate / at end of populate do color modify function and start timer
