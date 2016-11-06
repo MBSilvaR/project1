@@ -61,7 +61,7 @@ var startCountdown = 11;
             board = []
             populate(boardSize);
             offDot()
-            startCountdown = 10;
+            startCountdown = 11;
           }
           else {
             alert("Game over! Bye!");
