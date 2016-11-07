@@ -33,6 +33,5 @@ This game was developed using Javascript, jQuery, CSS, and HTML.
 "As an user, I want a game with clean graphics that won't overwhelm my eyes with nonsense"
 
 
-**MVP:
-d.o.t.s. provide a visual challenge with increasing levels of difficulty.
+
 
