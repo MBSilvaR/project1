@@ -22,7 +22,7 @@ var board = []
 
 var boardSize = 2
 
-var startCountdown = 11;
+var startCountdown = 10;
 
 var timerGo = function(){
   var startGame = setInterval(function() {
@@ -33,9 +33,8 @@ var timerGo = function(){
   if(startCountdown < 0) {
     startCountdown = 0;
     $('#timer').html(startCountdown);
-    alert("Time over! Bye!");
-    clearInterval(startGame);
-    $('.dot').off()
+    alert("Game over! Restarting!");
+    location.reload(true);
 
   }
   }, 1000);
@@ -57,7 +56,7 @@ var timerGo = function(){
             if(boardSize===12){
               boardSize = 12
             }
-            else{
+            else {
               boardSize++;
             }
 
@@ -66,15 +65,11 @@ var timerGo = function(){
             board = []
             populate(boardSize);
             offDot()
-            startCountdown = 11;
+            startCountdown = 10;
           }
           else {
             alert("Game over! Restarting!");
-            $('.dot').off();
-            clearInterval(startGame);
-            startCountdown = 0;
-            $('#timer').html(startCountdown);
-            location.reload()
+            location.reload(true);
           }
 
         })
@@ -82,7 +77,7 @@ var timerGo = function(){
       }
     }
   }
-populate(boardSize)
+
 
 var offDot = function(){
    var rand_dot = $('.dot')[Math.floor(Math.random()*$('.dot').length)];
@@ -92,10 +87,12 @@ var offDot = function(){
    $(rand_dot).addClass("winning_Dot");
 }
 
-offDot()
+
 
 $('#instructions').click(function(){
   $(this).remove()
+  populate(boardSize);
+  offDot();
   timerGo();
 })
 
