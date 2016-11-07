@@ -1,15 +1,18 @@
 # project1
 d.o.t.s.
 
-Synopsis:
+**Synopsis:
 This dynamic game was developed as a first project for General Assembly's Web Development Immersive class. It was originally conceived as a poor-man's version of the mobile game dots, but eventually evolved into a perception game, in which the user must identify the unique dot that is a different color from the ones provided in the color guide (the console is located on the left side of the board). The user has 10 seconds to find the unique dot, and if she/he succeeds, the board grows another column/row, where the user has to find the randomized unique dot again, and again, and again. The user wins until the user loses.
 
-Technologies used:
+
+**Technologies used:
 This game was developed using Javascript, jQuery, CSS, and HTML.
 
-Unsoved problems: Implementation of levels and scoreboard. 
 
-//Pseudocode:
+**Unsoved problems: Implementation of levels and scoreboard. 
+
+
+**Pseudocode:
 
 - Set up board to contain dots. Initial board's area is 2 rows of dots by 2 columns of dots.
 - Make all dots clickable.
@@ -22,4 +25,14 @@ Unsoved problems: Implementation of levels and scoreboard.
 - If a dot with the same color as the dots in the color guide is clicked, the timer goes down to 0 and the game ends.
 - If the timer gets to zero before the user finds and clicks on the "different" dot, the game ends.
 
+
+**User Stories:
+
+"As an user, I want a fun and dynamic game with simple rules that will provide inane entretainment"
+
+"As an user, I want a game with clean graphics that won't overwhelm my eyes with nonsense"
+
+
+**MVP:
+d.o.t.s. provide a visual challenge with increasing levels of difficulty.
 
