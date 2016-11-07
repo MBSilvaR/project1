@@ -27,15 +27,12 @@ var startCountdown = 10;
 var timerGo = function(){
   var startGame = setInterval(function() {
   startCountdown -= 1;
-
-
   $('#timer').html(startCountdown);
   if(startCountdown < 0) {
     startCountdown = 0;
     $('#timer').html(startCountdown);
     alert("Game over! Restarting!");
     location.reload(true);
-
   }
   }, 1000);
 }
