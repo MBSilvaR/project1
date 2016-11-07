@@ -25,13 +25,16 @@ var boardSize = 2
 var startCountdown = 11;
   var startGame = setInterval(function() {
   startCountdown -= 1;
+
+
   $('#timer').html(startCountdown);
   if(startCountdown < 0) {
     startCountdown = 0;
     $('#timer').html(startCountdown);
-    alert("Game over! Bye!");
+    alert("Time over! Bye!");
     clearInterval(startGame);
     $('.dot').off()
+
   }
   }, 1000);
 
@@ -64,11 +67,12 @@ var startCountdown = 11;
             startCountdown = 11;
           }
           else {
-            alert("Game over! Bye!");
+            alert("Game over! Restarting!");
             $('.dot').off();
             clearInterval(startGame);
             startCountdown = 0;
             $('#timer').html(startCountdown);
+            location.reload()
           }
 
         })
@@ -87,6 +91,10 @@ var offDot = function(){
 }
 
 offDot()
+
+$('#instructions').click(function(){
+  $(this).remove()
+})
 
 
 
