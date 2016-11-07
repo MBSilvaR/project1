@@ -23,6 +23,8 @@ var board = []
 var boardSize = 2
 
 var startCountdown = 11;
+
+var timerGo = function(){
   var startGame = setInterval(function() {
   startCountdown -= 1;
 
@@ -37,7 +39,7 @@ var startCountdown = 11;
 
   }
   }, 1000);
-
+}
 
   var populate = function(size){
     for(var h = 0; h < size; h++){
@@ -94,9 +96,8 @@ offDot()
 
 $('#instructions').click(function(){
   $(this).remove()
+  timerGo();
 })
-
-
 
 })();
 
