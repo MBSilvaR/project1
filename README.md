@@ -26,13 +26,14 @@ This game was developed using Javascript, jQuery, CSS, and HTML.
 - The board continues growing until it becomes 12 columns wide by 12 rows long. After that it iterates the randomization while staying the exact same size.
 - If a dot with the same color as the dots in the color guide is clicked, the timer goes down to 0 and the game ends.
 - If the timer gets to zero before the user finds and clicks on the "different" dot, the game ends.
+- If the user clicks on a dot that has a color found in the color guide, the game ends.
 
 
 **User Stories:
 
-"As an user, I want a fun and dynamic game with simple rules that will provide inane entretainment"
+"As a user, I want a fun and dynamic game with simple rules that will provide inane entretainment"
 
-"As an user, I want a game with clean graphics that won't overwhelm my eyes with nonsense"
+"As a user, I want a game with clean graphics that won't overwhelm my eyes with nonsense"
 
 
 
