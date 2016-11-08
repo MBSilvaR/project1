@@ -1,5 +1,7 @@
 # project1
 d.o.t.s.
+ 
+ACCESS IT HERE! https://mbsilvar.github.io/project1/
 
 **Synopsis:
 This dynamic game was developed as a first project for General Assembly's Web Development Immersive class. It was originally conceived as a poor-man's version of the mobile game dots, but eventually evolved into a perception game, in which the user must identify the unique dot that is a different color from the ones provided in the color guide (the console is located on the left side of the board). The user has 10 seconds to find the unique dot, and if she/he succeeds, the board grows another column/row, where the user has to find the randomized unique dot again, and again, and again. The user wins until the user loses.
