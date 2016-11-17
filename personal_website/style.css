@@ -1,0 +1,38 @@
+body {
+  font-family: Futura, sans-serif;
+  background-color: rgb(242, 240, 241);
+}
+
+#name {
+   font-size: 25px;
+   position: absolute;
+   left: 30px;
+   margin-bottom: 40px;
+}
+
+#left {
+  position: absolute;
+  top: 120px;
+  font-size: 13px;
+  left: 30px;
+}
+
+#right {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 11px;
+  padding: 0px 5px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+
+}
+
+a:hover {
+  text-decoration: underline;
+
+}
